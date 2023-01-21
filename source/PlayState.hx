@@ -2049,8 +2049,9 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
 
-			generateStaticArrows(0);
-			generateStaticArrows(1);
+			generateStaticArrows(0, dad.noteSkin, !skipArrowStartTween, daStartAlpha);
+			generateStaticArrows(1, boyfriend.noteSkin, !skipArrowStartTween, daStartAlpha);
+			
 			for (i in 0...playerStrums.length) {
 				setOnLuas('defaultPlayerStrumX' + i, playerStrums.members[i].x);
 				setOnLuas('defaultPlayerStrumY' + i, playerStrums.members[i].y);
